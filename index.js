@@ -1,5 +1,3 @@
-// test comment
-
 ! function(name, definition) {
   if (typeof module != 'undefined' && module.exports) module.exports = definition();
   else if (typeof define == 'function') define(definition);
@@ -38,10 +36,13 @@
       if (getWindowScroll().top > originalRect.top - requiredTop) {
         for (key in styles) {
           el.style[key] = styles[key];
+          el.classList.add("js-fixed");
         }
       } else {
         for (key in originalStyles) {
           el.style[key] = originalStyles[key];
+          el.classList.remove("js-fixed");
+
         }
       }
       onscroll && onscroll(event)
@@ -55,7 +56,7 @@
       left: rect.left + windowScroll.left,
       top: rect.top + windowScroll.top,
       width: rect.width,
-      height: rect.height
+      height: rect.height,
     }
   }
 
