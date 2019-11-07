@@ -1,3 +1,5 @@
+// test comment
+
 ! function(name, definition) {
   if (typeof module != 'undefined' && module.exports) module.exports = definition();
   else if (typeof define == 'function') define(definition);
